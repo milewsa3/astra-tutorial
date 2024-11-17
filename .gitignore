@@ -2,8 +2,7 @@
 
 # dependencies
 /node_modules
-/.pnp
-.pnp.*
+.package-lock.json
 .yarn/*
 !.yarn/patches
 !.yarn/plugins
