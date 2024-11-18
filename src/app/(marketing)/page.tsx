@@ -1,17 +1,12 @@
-import React from "react";
-import { Container, Icons, Wrapper } from "@/components";
-import Image from "next/image";
-import {
-  ArrowRight,
-  ChevronRight,
-  User,
-  Zap,
-} from "lucide-react";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
-import { BorderBeam } from "@/components/ui/border-beam";
-import SectionBadge from "@/components/ui/section-badge";
-import { perks, features, pricingCards, reviews } from "@/constants";
+import React from 'react'
+import { Container, Icons, Wrapper } from '@/components'
+import Image from 'next/image'
+import { ArrowRight, ChevronRight, User, Zap } from 'lucide-react'
+import { Button } from '@/components/ui/button'
+import Link from 'next/link'
+import { BorderBeam } from '@/components/ui/border-beam'
+import SectionBadge from '@/components/ui/section-badge'
+import { perks, features, pricingCards, reviews } from '@/constants'
 import {
   Card,
   CardContent,
@@ -19,15 +14,15 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import { cn } from "@/lib/utils";
-import Marquee from "@/components/ui/marquee";
-import { LampContainer } from "@/components/ui/lamp";
-import { Input } from "@/components/ui/input";
+} from '@/components/ui/card'
+import { cn } from '@/lib/utils'
+import Marquee from '@/components/ui/marquee'
+import { LampContainer } from '@/components/ui/lamp'
+import { Input } from '@/components/ui/input'
 
 const HomePage = () => {
-  const firstRow = reviews.slice(0, reviews.length / 2);
-  const secondRow = reviews.slice(reviews.length / 2);
+  const firstRow = reviews.slice(0, reviews.length / 2)
+  const secondRow = reviews.slice(reviews.length / 2)
 
   return (
     <section className="w-full relative flex flex-col items-center justify-center px-4 md:px-0 py-8">
@@ -114,7 +109,7 @@ const HomePage = () => {
         <Container>
           <div className="flex flex-col items-center justify-center py-10 md:py-20 w-full">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full divide-x-0 md:divide-x divide-y md:divide-y-0 divide-gray-900 first:border-none first:border-grey-900">
-              {perks.map((perk) => (
+              {perks.map(perk => (
                 <div
                   key={perk.title}
                   className="flex flex-col items-start px-4 py-4 md:px-6 lg:px-8 lg:py-6"
@@ -155,7 +150,7 @@ const HomePage = () => {
         <Container>
           <div className="flex- flex-col items-center justify-center py-10 md:py-20 w-full">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full gap-8">
-              {features.map((feature) => (
+              {features.map(feature => (
                 <div
                   key={feature.title}
                   className="flex flex-col items-start px-0"
@@ -191,19 +186,20 @@ const HomePage = () => {
         </Container>
         <Container className="flex items-center justify-center">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 w-full md:gap-8 py-10 md:py-20 flex-wrap max-w-4xl">
-            {pricingCards.map((card) => (
+            {pricingCards.map(card => (
               <Card
                 key={card.title}
                 className={cn(
-                  "flex flex-col w-full border-neutral-700",
-                  card.title === "Unlimited Saas" && "border-2 border-primary"
+                  'flex flex-col w-full border-neutral-700',
+                  card.title === 'Unlimited Saas' && 'border-2 border-primary',
                 )}
               >
                 <CardHeader className="border-b border-border">
                   <span>{card.title}</span>
                   <CardTitle
                     className={cn(
-                      card.title !== "Unlimited Saas" && "text-muted-foreground"
+                      card.title !== 'Unlimited Saas' &&
+                        'text-muted-foreground',
                     )}
                   >
                     {card.price}
@@ -211,7 +207,7 @@ const HomePage = () => {
                   <CardDescription>{card.description}</CardDescription>
                 </CardHeader>
                 <CardContent className="pt-6 space-y-3">
-                  {card.features.map((feature) => (
+                  {card.features.map(feature => (
                     <div key={feature} className="flex items-center gap-2">
                       <Zap className="w-4 h-4 fill-primary text-primary" />
                       <p>{feature}</p>
@@ -222,9 +218,9 @@ const HomePage = () => {
                   <Link
                     href="#"
                     className={cn(
-                      "w-full text-center text-primary-foreground bg-primary p-2 rounded-md text-sm font-medium",
-                      card.title !== "Unlimited Saas" &&
-                        "!bg-foreground !text-background"
+                      'w-full text-center text-primary-foreground bg-primary p-2 rounded-md text-sm font-medium',
+                      card.title !== 'Unlimited Saas' &&
+                        '!bg-foreground !text-background',
                     )}
                   >
                     {card.buttonText}
@@ -254,7 +250,7 @@ const HomePage = () => {
           <div className="py-10 md:py-20 w-full">
             <div className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden py-10">
               <Marquee pauseOnHover className="[--duration:20s] select-none">
-                {firstRow.map((review) => (
+                {firstRow.map(review => (
                   <figure
                     key={review.name}
                     className="relative w-64 cursor-pointer overflow-hidden rounded-xl border p-4 border-zinc-50/[.1] bg-background hover:bg-zinc-50/[.15]"
@@ -281,7 +277,7 @@ const HomePage = () => {
                 pauseOnHover
                 className="[--duration:20s] select-none"
               >
-                {secondRow.map((review) => (
+                {secondRow.map(review => (
                   <figure
                     key={review.name}
                     className="relative w-64 cursor-pointer overflow-hidden rounded-xl border p-4 border-zinc-50/[.1] bg-background hover:bg-zinc-50/[.15]"
@@ -363,7 +359,7 @@ const HomePage = () => {
                   </Button>
                 </form>
                 <p className="text-xs text-muted-foreground">
-                  By subscribing you agree with our{" "}
+                  By subscribing you agree with our{' '}
                   <Link href="#">Privacy Policy</Link>
                 </p>
               </div>
@@ -372,7 +368,7 @@ const HomePage = () => {
         </Container>
       </Wrapper>
     </section>
-  );
-};
+  )
+}
 
-export default HomePage;
+export default HomePage

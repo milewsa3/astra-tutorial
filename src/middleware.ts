@@ -1,15 +1,15 @@
-import { NextResponse } from "next/server";
-import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
+import { NextResponse } from 'next/server'
+import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server'
 
-const isHomeRoute = createRouteMatcher(["/"])
+const isHomeRoute = createRouteMatcher(['/'])
 
 export default clerkMiddleware(async (auth, req) => {
-  const { userId } = await auth();
+  const { userId } = await auth()
 
   if (userId && isHomeRoute(req)) {
-    return NextResponse.rewrite(new URL("/", req.url));
+    return NextResponse.rewrite(new URL('/', req.url))
   }
-});
+})
 
 export const config = {
   matcher: [
@@ -18,4 +18,4 @@ export const config = {
     // Always run for API routes
     '/(api|trpc)(.*)',
   ],
-};
+}

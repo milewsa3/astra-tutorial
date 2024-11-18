@@ -1,7 +1,7 @@
-import React from "react";
-import Icons from "../global/icons";
-import { Heart } from "lucide-react";
-import Link from "next/link";
+import React from 'react'
+import Icons from '../global/icons'
+import { Heart } from 'lucide-react'
+import Link from 'next/link'
 
 const Footer = () => {
   return (
@@ -169,7 +169,7 @@ const Footer = () => {
         </p>
       </div>
     </footer>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

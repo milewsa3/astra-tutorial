@@ -1,12 +1,12 @@
-import React from "react";
-import Link from "next/link";
-import Icons from "../global/icons";
-import { buttonVariants } from "../ui/button";
-import { currentUser } from "@clerk/nextjs/server";
-import { UserButton } from "@clerk/nextjs"
+import React from 'react'
+import Link from 'next/link'
+import Icons from '../global/icons'
+import { buttonVariants } from '../ui/button'
+import { currentUser } from '@clerk/nextjs/server'
+import { UserButton } from '@clerk/nextjs'
 
 const Navbar = async () => {
-  const user = await currentUser();
+  const user = await currentUser()
 
   return (
     <header className="px-4 h-14 sticky top-0 inset-x-0 w-full bg-background/40 backdrop-blur-lg border-b border-border z-50">
@@ -39,10 +39,19 @@ const Navbar = async () => {
             <UserButton />
           ) : (
             <>
-              <Link href="/sign-in" className={buttonVariants({size: "sm", variant: "ghost"})}>
+              <Link
+                href="/sign-in"
+                className={buttonVariants({ size: 'sm', variant: 'ghost' })}
+              >
                 Login
               </Link>
-              <Link href="/sign-up" className={buttonVariants({size: "sm", className: "hidden md:flex"})}>
+              <Link
+                href="/sign-up"
+                className={buttonVariants({
+                  size: 'sm',
+                  className: 'hidden md:flex',
+                })}
+              >
                 Start free trial
               </Link>
             </>
@@ -50,7 +59,7 @@ const Navbar = async () => {
         </div>
       </div>
     </header>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar
