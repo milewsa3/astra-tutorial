@@ -22,7 +22,7 @@ export default function RootLayout({
           font.className,
         )}
       >
-        <ClerkProvider appearance={{ baseTheme: dark }}>
+        <ClerkProvider appearance={{ baseTheme: dark }} publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}>
           {children}
         </ClerkProvider>
       </body>
